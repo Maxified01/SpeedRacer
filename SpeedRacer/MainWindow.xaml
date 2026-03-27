@@ -1,0 +1,63 @@
+﻿<Window x:Class="SpeedRacer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Speed Racer" Height="500" Width="550">
+    <Grid Background="#1e1e1e">
+        <StackPanel Margin="20">
+
+            <!-- Car Selector -->
+            <ComboBox x:Name="CarSelector"
+                      SelectionChanged="CarSelector_Changed"
+                      DisplayMemberPath="Name"
+                      Margin="0,0,0,10"/>
+
+            <!-- Car Stats -->
+            <TextBlock x:Name="CarStats"
+                       Text="Car stats will appear here"
+                       Foreground="White"
+                       Margin="0,0,0,10"/>
+
+            <!-- Lap -->
+            <Label x:Name="LapLabel"
+                   Content="Lap: 1/5"
+                   Foreground="White"/>
+
+            <!-- Track Canvas for Car Animation -->
+            <Canvas x:Name="TrackCanvas" Height="150" Background="#333" Margin="0,5,0,10">
+                <Rectangle x:Name="CarRectangle" Canvas.Left="0" Width="50" Height="20" Fill="Red"/>
+            </Canvas>
+
+            <!-- Lap Progress -->
+            <StackPanel Orientation="Vertical" Margin="0,5,0,5">
+                <TextBlock Text="Lap Progress" Foreground="White" FontSize="12"/>
+                <ProgressBar x:Name="LapProgressBar" Height="20" Maximum="100"/>
+            </StackPanel>
+
+            <!-- Fuel -->
+            <StackPanel Orientation="Vertical" Margin="0,5,0,5">
+                <TextBlock Text="Fuel Level" Foreground="White" FontSize="12"/>
+                <ProgressBar x:Name="FuelBar" Height="20" Maximum="100"/>
+            </StackPanel>
+
+            <!-- Time -->
+            <StackPanel Orientation="Vertical" Margin="0,5,0,10">
+                <TextBlock Text="Time Remaining" Foreground="White" FontSize="12"/>
+                <ProgressBar x:Name="TimeBar" Height="20" Maximum="100"/>
+            </StackPanel>
+
+            <!-- Status -->
+            <TextBlock x:Name="StatusText"
+                       Text="Ready"
+                       Foreground="LightGreen"
+                       Margin="0,5,0,10"/>
+
+            <!-- Buttons -->
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Speed Up" Click="SpeedUp_Click" Margin="5"/>
+                <Button Content="Maintain" Click="Maintain_Click" Margin="5"/>
+                <Button Content="Pit Stop" Click="PitStop_Click" Margin="5"/>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>
