@@ -63,3 +63,38 @@ SpeedRacer/
 ├─ UnitTests/
 │   └─ RaceManagerTests.cs
 └─ README.md
+
+
+classDiagram
+    MainWindow --> RaceManager
+    RaceManager --> Car
+    RaceManager --> GameAction
+
+    class MainWindow {
+        +AnimateCar()
+        +UpdateUI()
+    }
+
+    class RaceManager {
+        -CurrentLap
+        -TotalLaps
+        -TimeRemaining
+        +TakeTurn()
+        +IsRaceFinished()
+    }
+
+    class Car {
+        -Name
+        -Speed
+        -MaxFuel
+        -CurrentFuel
+        +ConsumeFuel()
+        +Refuel()
+    }
+
+    class GameAction {
+        <<enum>>
+        SpeedUp
+        Maintain
+        PitStop
+    }
