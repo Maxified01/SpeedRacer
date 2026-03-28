@@ -18,7 +18,7 @@ namespace SpeedRacer.Managers
             PlayerCar = playerCar;
         }
 
-        // ✅ Take turn
+        // Take turns
         public void TakeTurn(GameAction action)
         {
             if (IsRaceOver) return;
@@ -47,7 +47,7 @@ namespace SpeedRacer.Managers
             }
         }
 
-        // ✅ Methods to safely update values
+        // Methods to safely update values
         public void SetCurrentLap(int lap)
         {
             if (lap >= 0 && lap <= TotalLaps) CurrentLap = lap;
