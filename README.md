@@ -46,6 +46,7 @@ private void AnimateCar(double targetX)
 {
     ...
 }
+
 Project Structure
 SpeedRacer/
 │
@@ -64,8 +65,10 @@ SpeedRacer/
 │   └─ RaceManagerTests.cs
 └─ README.md
 
+---
 
-classDiagram
+## Class Diagram
+```plaintextclassDiagram
     MainWindow --> RaceManager
     RaceManager --> Car
     RaceManager --> GameAction
